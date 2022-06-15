@@ -10,6 +10,8 @@ const newPostController = require("./controllers/newPost");
 const homeController = require("./controllers/home");
 const getPostController = require("./controllers/getPost");
 const storePostController = require("./controllers/storePost");
+const newUserController = require("./controllers/newUserController");
+const storeUserController = require("./controllers/storeUserController");
 
 const validation = require("./middleware/validation");
 
@@ -30,6 +32,8 @@ app.listen(4000, () => {
 app.get("/", homeController);
 
 app.get("/posts/new", newPostController);
+
+app.get("/auth/register", newUserController);
 
 app.post("/posts/store", storePostController);
 
