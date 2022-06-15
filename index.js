@@ -13,7 +13,7 @@ const storePostController = require("./controllers/storePost");
 const newUserController = require("./controllers/newUserController");
 const storeUserController = require("./controllers/storeUserController");
 
-const validation = require("./middleware/validation");
+const validation = require("./middlewares/validation");
 
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
 
@@ -34,6 +34,7 @@ app.get("/", homeController);
 app.get("/posts/new", newPostController);
 
 app.get("/auth/register", newUserController);
+app.get("/users/register", newUserController);
 
 app.post("/posts/store", storePostController);
 
