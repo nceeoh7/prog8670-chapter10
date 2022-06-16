@@ -34,6 +34,7 @@ app.get("/", homeController);
 app.get("/posts/new", newPostController);
 
 app.get("/auth/register", newUserController);
+
 app.get("/users/register", newUserController);
 
 app.post("/posts/store", storePostController);
