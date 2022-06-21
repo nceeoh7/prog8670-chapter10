@@ -6,14 +6,15 @@ const ejs = require("ejs");
 const app = new express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const newPostController = require("./controllers/newPost");
-const homeController = require("./controllers/home");
-const getPostController = require("./controllers/getPost");
-const storePostController = require("./controllers/storePost");
-const newUserController = require("./controllers/newUserController");
-const storeUserController = require("./controllers/storeUserController");
-
 const validation = require("./middlewares/validation");
+const homeController = require("./controllers/home");
+const newPostController = require("./controllers/newPost");
+const storePostController = require("./controllers/storePost");
+const getPostController = require("./controllers/getPost");
+const newUserController = require("./controllers/newUser");
+const storeUserController = require("./controllers/storeUser");
+const loginController = require("./controllers/login");
+const loginUserController = require("./controllers/loginUser");
 
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
 
@@ -22,6 +23,8 @@ app.use(fileUpload());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use("/posts/store", validation.validateMiddleware);
 
 app.set("view engine", "ejs");
 
@@ -33,10 +36,14 @@ app.get("/", homeController);
 
 app.get("/posts/new", newPostController);
 
-app.get("/auth/register", newUserController);
-
-app.get("/users/register", newUserController);
-
 app.post("/posts/store", storePostController);
 
 app.get("/post/:id", getPostController);
+
+app.get("/auth/register", newUserController);
+
+app.get("/auth/login", loginController);
+
+app.post("/users/register", storeUserController);
+
+app.post("/users/login", loginUserController);

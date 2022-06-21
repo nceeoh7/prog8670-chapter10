@@ -12,8 +12,8 @@
       <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
-            <div class="page-head ing">
-              <h1>Register a new accounts</h1>
+            <div class="page-heading">
+              <h1>Register</h1>
             </div>
           </div>
         </div>
@@ -24,6 +24,10 @@
       <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
+            <p>
+              Want to get in touch? Fill out the form below to send me a message
+              and I will get back to you as soon as possible!
+            </p>
             <div class="my-5">
               <!-- * * * * * * * * * * * * * * *-->
               <!-- * * SB Forms Contact Form * *-->
@@ -37,29 +41,52 @@
                 method="POST"
                 enctype="multipart/form-data"
               >
+                <!-- <div class="control-group">
+                  <div class="form-group form-floating-form-group controls">
+                    <label>Image</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="image"
+                      name="image"
+                    />
+                  </div>
+                </div> -->
                 <div class="form-floating">
                   <input
                     class="form-control"
                     id="username"
                     name="username"
                     type="text"
-                    placeholder="Username"
+                    placeholder="Enter desired username"
                   />
-                  <label for="username">Description</label>
+                  <label for="username">Username</label>
                   <div class="invalid-feedback">A username is required.</div>
                 </div>
+
                 <div class="form-floating">
                   <input
                     class="form-control"
                     id="password"
                     name="password"
                     type="password"
-                    placeholder="password"
+                    placeholder="Enter desired password"
                   />
-                  <label for="password">Description</label>
+                  <label for="password">Password</label>
                   <div class="invalid-feedback">A password is required.</div>
                 </div>
 
+                <!-- <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    id="body"
+                    name="body"
+                    placeholder="Post body"
+                    style="height: 12rem"
+                  ></textarea>
+                  <label for="body">Post Body</label>
+                  <div class="invalid-feedback">A post body is required.</div>
+                </div> -->
                 <br />
 
                 <!-- Submit success message-->
